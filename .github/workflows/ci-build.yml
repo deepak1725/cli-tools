@@ -64,7 +64,6 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
     - name: Generate CLI Build
-      uses: thatisuday/go-cross-build@v1.1.0
       run: |
           go build -o dist/crda
     - name: Archive production artifacts
