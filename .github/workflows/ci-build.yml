@@ -65,7 +65,11 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
     - name: Generate CLI Build
       uses: thatisuday/go-cross-build@v1.1.0
+      run: |
+          go build -o dist/crda
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
       with:
-          platforms: 'linux/amd64, darwin/amd64, windows/amd64'
-          name: 'crda'
-          dest: 'dist'
+        name: dist-without-markdown
+        path: |
+          dist
