@@ -1,9 +1,23 @@
 # .goreleaser.yml
+project_name: crda_cli
 builds:
-  - main: ./main.go
+  - env: [CGO_ENABLED=0]
+    main: ./main.go
     id: "cli"
     binary: crda
     goos:
       - linux
       - darwin
       - windows
+    goarch:
+      - amd64
+      - arm64
+nfpms:
+- maintainer: Deepak Sharma <deepshar@redhat.com>
+  description: CLI Tools for CRDA.
+  homepage: https://github.com/fabric8-analytics/cli-tools
+  license: MIT
+  formats:
+  - deb
+  - rpm
+  - apk
