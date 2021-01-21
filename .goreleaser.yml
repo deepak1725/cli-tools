@@ -1,5 +1,9 @@
 # .goreleaser.yml
 project_name: crda_cli
+archives:
+  - files:
+      - LICENSE
+      - README.md
 builds:
   - env: [CGO_ENABLED=0]
     main: ./main.go
@@ -12,8 +16,7 @@ builds:
     goarch:
       - amd64
       - arm64
-binary: crda
-ignore:
+    ignore:
       - goos: darwin
         goarch: 386
       - goos: linux
