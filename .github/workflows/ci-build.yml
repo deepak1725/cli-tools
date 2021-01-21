@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dk-action ]
   pull_request:
-    branches: [ main ]
+    branches: [ dk-action ]
 
 jobs:
   goreport:
@@ -67,6 +67,5 @@ jobs:
       uses: thatisuday/go-cross-build@v1.1.0
       with:
           platforms: 'linux/amd64, darwin/amd64, windows/amd64'
-          package: 'demo'
-          name: 'program'
+          name: 'crda'
           dest: 'dist'
