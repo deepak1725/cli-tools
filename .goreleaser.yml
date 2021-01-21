@@ -12,6 +12,15 @@ builds:
     goarch:
       - amd64
       - arm64
+binary: crda
+ignore:
+      - goos: darwin
+        goarch: 386
+      - goos: linux
+        goarch: arm
+        goarm: 7
+      - goarm: mips64
+        gomips: hardfloat
 nfpms:
 - maintainer: Deepak Sharma <deepshar@redhat.com>
   description: CLI Tools for CRDA.
