@@ -1,0 +1,9 @@
+# .goreleaser.yml
+builds:
+  - main: ./main.go
+    id: "cli"
+    binary: crda
+    goos:
+      - linux
+      - darwin
+      - windows
