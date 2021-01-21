@@ -1,11 +1,10 @@
-# .goreleaser.yml
-project_name: crda_cli
+project_name: crda
 archives:
   - files:
       - LICENSE
       - README.md
 builds:
-  - env: [CGO_ENABLED=0]
+  - env: CGO_ENABLED=0
     main: ./main.go
     id: "cli"
     binary: crda
