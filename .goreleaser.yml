@@ -32,3 +32,4 @@ nfpms:
   - deb
   - rpm
   - apk
+  - dmg
